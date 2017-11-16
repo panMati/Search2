@@ -1,255 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ad.search.KategoriaActivity">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView3"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/textView3"
-            android:layout_marginTop="30dp"
-            android:text="KATEGORIA 1"
-            android:textStyle="bold"
-            android:textColor="#222222"
-            android:textSize="25dp" />
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="15dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" >
 
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView6"
-            android:layout_centerHorizontal="true"
-            android:text="KATEGORIA 2"
-            android:textStyle="bold"
-            android:textColor="#222222"
-            android:textSize="25dp" />
+            <TextView
+                android:id="@+id/tv_opis_kategorii"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/opis_kategorii"
+                android:textAlignment="center"
+                android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView11"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:text="KATEGORIA 3"
-            android:textStyle="bold"
-            android:textColor="#222222"
-            android:textSize="25dp" />
+            <TextView
+                android:id="@+id/tv_kategoria1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_opis_kategorii"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="@string/kategoria1"
+                android:textColor="#222222"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView9"
-            android:layout_alignLeft="@+id/textView14"
-            android:layout_alignStart="@+id/textView14"
-            android:text="KATEGORIA 4"
-            android:textStyle="bold"
-            android:textColor="#222222"
-            android:textSize="25dp" />
+            <TextView
+                android:id="@+id/tv_kategoria2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_opis_kategorii"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="@string/kategoria2"
+                android:textColor="#222222"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView25"
-            android:layout_alignBottom="@+id/textView25"
-            android:layout_alignLeft="@+id/textView16"
-            android:layout_alignStart="@+id/textView16"
-            android:text="KATEGORIA 5"
-            android:textStyle="bold"
-            android:textColor="#222222"
-            android:textSize="25dp" />
+            <TextView
+                android:id="@+id/tv_kategoria3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_opis_kategorii"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="@string/kategoria3"
+                android:textColor="#222222"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView21"
-            android:layout_marginLeft="26dp"
-            android:layout_marginStart="26dp"
-            android:text="SUNSEEKER"
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_kategoria4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_opis_kategorii"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="160dp"
+                android:padding="5dp"
+                android:text="@string/kategoria4"
+                android:textColor="#222222"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/tv_kategoria5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tv_opis_kategorii"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="160dp"
+                android:padding="5dp"
+                android:text="@string/kategoria5"
+                android:textColor="#222222"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-            android:layout_alignLeft="@+id/textView22"
-            android:layout_alignStart="@+id/textView22"
-            android:layout_below="@+id/textView21"
-            android:text="FAIRLINE "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_kategoria1"
+                android:layout_below="@+id/tv_kategoria1"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st1"
+                android:textColor="#ff00ff"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView8"
-            android:layout_alignStart="@+id/textView8"
-            android:layout_below="@+id/textView8"
-            android:text="NIMBUS "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_kategoria2"
+                android:layout_below="@id/tv_kategoria2"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st2"
+                android:textColor="#ff00ff"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView9"
-            android:layout_alignStart="@+id/textView9"
-            android:layout_below="@+id/textView9"
-            android:text="F-PAJOT "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_kategoria2"
+                android:layout_below="@id/tv_st2"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st3"
+                android:textColor="#00ffff"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView16"
-            android:layout_alignBottom="@+id/textView16"
-            android:layout_alignEnd="@+id/textView21"
-            android:layout_alignRight="@+id/textView21"
-            android:text="CNB\nBARETEAU\nLUMITUBE "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_kategoria3"
+                android:layout_below="@id/tv_kategoria3"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st4"
+                android:textColor="#0000ff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView6"
-            android:layout_alignStart="@+id/textView6"
-            android:layout_below="@+id/textView6"
-            android:text="MODEL "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_kategoria3"
+                android:layout_below="@+id/tv_st4"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st5"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView23"
-            android:layout_alignStart="@+id/textView23"
-            android:layout_below="@+id/textView22"
-            android:text="BJ-T "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_kategoria3"
+                android:layout_below="@+id/tv_st5"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st6"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView11"
-            android:layout_alignStart="@+id/textView11"
-            android:layout_below="@+id/textView11"
-            android:text="RHEA "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_kategoria4"
+                android:layout_below="@id/tv_kategoria4"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st7"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView12"
-            android:layout_alignStart="@+id/textView12"
-            android:layout_below="@+id/textView12"
-            android:text="NOVAL "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria4"
+                android:layout_below="@+id/tv_st7"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st8"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textView7"
-            android:layout_alignRight="@+id/textView7"
-            android:layout_below="@+id/textView19"
-            android:text="HANSEY "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria4"
+                android:layout_below="@+id/tv_st8"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st9"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/tv_st10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria4"
+                android:layout_below="@+id/tv_st9"
+                android:background="#444444"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st10"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/tv_st11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria4"
+                android:layout_below="@+id/tv_st10"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st11"
+                android:textSize="18sp" />
 
-            android:layout_alignEnd="@+id/textView11"
-            android:layout_alignRight="@+id/textView11"
-            android:layout_below="@+id/textView13"
-            android:layout_marginTop="90dp"
-            android:text="BRUNSWICK "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria5"
+                android:layout_below="@+id/tv_kategoria5"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st12"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView16"
-            android:layout_alignStart="@+id/textView16"
-            android:layout_below="@+id/textView16"
-            android:text="BRUNSWICK POR. "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria5"
+                android:layout_below="@+id/tv_st12"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st13"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView17"
-            android:layout_alignStart="@+id/textView17"
-            android:layout_below="@+id/textView17"
-            android:text="DELPHIA "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria5"
+                android:layout_below="@+id/tv_st13"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st14"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView7"
-            android:layout_alignStart="@+id/textView7"
-            android:layout_below="@+id/textView7"
-            android:text="WINDY "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria5"
+                android:layout_below="@+id/tv_st14"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st15"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView18"
-            android:layout_alignStart="@+id/textView18"
-            android:layout_below="@+id/textView18"
-            android:text="MODEL "
-            android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_st16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_kategoria5"
+                android:layout_below="@+id/tv_st15"
+                android:onClick="doSpecyfikacji"
+                android:padding="5dp"
+                android:text="@string/st16"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView20"
-            android:layout_alignStart="@+id/textView20"
-            android:layout_below="@+id/textView20"
-            android:text="OSTRÓDA"
-            android:textSize="18dp" />
+        </RelativeLayout>
 
-    </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+</ScrollView>

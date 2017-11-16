@@ -2,5 +2,41 @@
     <string name="app_name">Search</string>
     <string name="first">Wyszukaj</string>
     <string name="second">Skanuj</string>
+
+
+    <!--Nazwy kategorii uzystematyzowane-->
+
+    <string name="opis_kategorii">Wybierając stocznie otrzymasz instrukcję postępowania z wadami</string>
+
+    <string name="kategoria1">KATEGORIA 1</string>
+    <string name="kategoria2">KATEGORIA 2</string>
+    <string name="kategoria3">KATEGORIA 3</string>
+    <string name="kategoria4">KATEGORIA 4</string>
+    <string name="kategoria5">KATEGORIA 5</string>
+
+    <!--Nazwy Stoczni usystematyzowane-->
+
+    <!--KAT 1-->
+    <string name="st1">SUNSEEKER</string>
+    <!--KAT 2-->
+    <string name="st2">FAIRLINE</string>
+    <string name="st3">MODEL</string>
+    <!--KAT 3-->
+    <string name="st4">BJ-T</string>
+    <string name="st5">RHEA</string>
+    <string name="st6">NOVAL</string>
+    <!--KAT 4-->
+    <string name="st7">CNB\nBARETEAU\nLUMITUBE</string>
+    <string name="st8">F-PAJOT</string>
+    <string name="st9">NIMBUS</string>
+    <string name="st10">WINDY</string>
+    <string name="st11">HANSEY</string>
+    <!--KAT 5-->
+    <string name="st12">BRUNSWICK</string>
+    <string name="st13">BRUNSWICK POR.</string>
+    <string name="st14">DELPHIA</string>
+    <string name="st15">MODEL</string>
+    <string name="st16">OSTRÓDA</string>
+
     <string name="title_activity_main2">Main2Activity</string>
 </resources>
