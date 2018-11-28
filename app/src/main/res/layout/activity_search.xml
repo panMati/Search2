@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,17 +21,19 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:ems="10"
-            android:text=""
+            android:focusable="true"
+            android:imeOptions="actionDone"
             android:inputType="text"
             android:lines="1"
-            android:imeOptions="actionDone"
+            android:text=""
+
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="-1dp" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
@@ -42,12 +43,36 @@
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="50dp" />
 
-        <ListView
-            android:id="@+id/list"
-            android:clickable="true"
+        <Button
+            android:id="@+id/doSkanera"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Przejdź do skanera kodów"
+            android:onClick="scanBar"
+            android:layout_below="@+id/button" />
+
+        <ExpandableListView
+            android:id="@+id/lvExp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button"/>
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/doSkanera"
+            android:text="Historia wyszukiwania"
+            android:clickable="true"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="50dp" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lvExp"
+            android:clickable="true" />
     </RelativeLayout>
 
 </RelativeLayout>

@@ -6,278 +6,294 @@
     tools:context="com.example.ad.search.KategoriaActivity">
 
 
-        <RelativeLayout
-            android:id="@+id/relativeLayout"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_opis_kategorii"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="15dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp" >
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/opis_kategorii"
+            android:textAlignment="center"
+            android:textSize="22sp" />
 
-            <TextView
-                android:id="@+id/tv_opis_kategorii"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/opis_kategorii"
-                android:textAlignment="center"
-                android:textSize="30sp" />
+        <TextView
+            android:id="@+id/tv_kategoria1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_opis_kategorii"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="2dp"
+            android:padding="5dp"
+            android:text="@string/kategoria1"
+            android:textColor="#222222"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_kategoria1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_opis_kategorii"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="15dp"
-                android:padding="5dp"
-                android:text="@string/kategoria1"
-                android:textColor="#222222"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_kategoria2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_opis_kategorii"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:padding="5dp"
+            android:text="@string/kategoria2"
+            android:textColor="#222222"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_kategoria2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_opis_kategorii"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
-                android:padding="5dp"
-                android:text="@string/kategoria2"
-                android:textColor="#222222"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_kategoria3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_opis_kategorii"
+            android:layout_marginRight="30dp"
+            android:padding="5dp"
+            android:text="@string/kategoria3"
+            android:textColor="#222222"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_kategoria3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/tv_opis_kategorii"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="15dp"
-                android:padding="5dp"
-                android:text="@string/kategoria3"
-                android:textColor="#222222"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_kategoria4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_opis_kategorii"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="150dp"
+            android:padding="5dp"
+            android:text="@string/kategoria4"
+            android:textColor="#222222"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_kategoria4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_opis_kategorii"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="160dp"
-                android:padding="5dp"
-                android:text="@string/kategoria4"
-                android:textColor="#222222"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_kategoria5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_opis_kategorii"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="150dp"
+            android:padding="5dp"
+            android:text="@string/kategoria5"
+            android:textColor="#222222"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_kategoria5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/tv_opis_kategorii"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="160dp"
-                android:padding="5dp"
-                android:text="@string/kategoria5"
-                android:textColor="#222222"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_st1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria1"
+            android:textAlignment="center"
+            android:layout_below="@+id/tv_kategoria1"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st1"
+            android:textColor="#ff00ff"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_kategoria1"
-                android:layout_below="@+id/tv_kategoria1"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st1"
-                android:textColor="#ff00ff"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_kategoria2"
+            android:layout_below="@id/tv_kategoria2"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st2"
+            android:textColor="#ff00ff"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_kategoria2"
-                android:layout_below="@id/tv_kategoria2"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st2"
-                android:textColor="#ff00ff"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_kategoria2"
+            android:layout_below="@id/tv_st2"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st3"
+            android:textColor="#00ffff"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_kategoria2"
-                android:layout_below="@id/tv_st2"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st3"
-                android:textColor="#00ffff"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_kategoria3"
+            android:layout_below="@id/tv_kategoria3"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st4"
+            android:textColor="#0000ff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_st4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_kategoria3"
-                android:layout_below="@id/tv_kategoria3"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st4"
-                android:textColor="#0000ff"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_st5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_kategoria3"
+            android:layout_below="@+id/tv_st4"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st5"
+            android:textColor="#cc99ff"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_kategoria3"
-                android:layout_below="@+id/tv_st4"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st5"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_kategoria3"
+            android:layout_below="@+id/tv_st5"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st6"
+            android:textColor="#ff0000"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_kategoria3"
-                android:layout_below="@+id/tv_st5"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st6"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_kategoria4"
+            android:layout_below="@+id/tv_kategoria4"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st7"
+            android:textAlignment="center"
+            android:textColor="#ff0000"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_kategoria4"
-                android:layout_below="@id/tv_kategoria4"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st7"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria4"
+            android:layout_below="@+id/tv_st7"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st8"
+            android:textColor="#cc99ff"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria4"
-                android:layout_below="@+id/tv_st7"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st8"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria4"
+            android:layout_below="@+id/tv_st8"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:textColor="#1199ff"
+            android:text="@string/st9"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria4"
-                android:layout_below="@+id/tv_st8"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st9"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria4"
+            android:layout_below="@+id/tv_st9"
+            android:background="#444444"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st10"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tv_st10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria4"
-                android:layout_below="@+id/tv_st9"
-                android:background="#444444"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st10"
-                android:textColor="#ffffff"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_st11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria4"
+            android:layout_below="@+id/tv_st10"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:background="#4444"
+            android:textColor="#ffff00"
+            android:text="@string/st11"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria4"
-                android:layout_below="@+id/tv_st10"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st11"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria5"
+            android:layout_below="@+id/tv_kategoria5"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:textColor="#ff7700"
+            android:text="@string/st12"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria5"
-                android:layout_below="@+id/tv_kategoria5"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st12"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria5"
+            android:layout_below="@+id/tv_st12"
+            android:onClick="doSpecyfikacji"
+            android:textColor="#ff7700"
+            android:padding="5dp"
+            android:text="@string/st13"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria5"
-                android:layout_below="@+id/tv_st12"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st13"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria5"
+            android:layout_below="@+id/tv_st13"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:textColor="#ffff00"
+            android:background="#4444"
+            android:text="@string/st14"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria5"
-                android:layout_below="@+id/tv_st13"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st14"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria5"
+            android:layout_below="@+id/tv_st14"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:text="@string/st15"
+            android:textColor="#00ffff"
 
-            <TextView
-                android:id="@+id/tv_st15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria5"
-                android:layout_below="@+id/tv_st14"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st15"
-                android:textSize="18sp" />
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_st16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_kategoria5"
-                android:layout_below="@+id/tv_st15"
-                android:onClick="doSpecyfikacji"
-                android:padding="5dp"
-                android:text="@string/st16"
-                android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_st16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_kategoria5"
+            android:layout_below="@+id/tv_st15"
+            android:onClick="doSpecyfikacji"
+            android:padding="5dp"
+            android:textColor="#00ff00"
+            android:text="@string/st16"
+            android:textSize="18sp" />
 
-        </RelativeLayout>
+    </RelativeLayout>
 
 </ScrollView>

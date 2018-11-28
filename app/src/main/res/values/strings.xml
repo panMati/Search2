@@ -1,12 +1,19 @@
 <resources>
+
+    <!--Aktivity_Main-->
     <string name="app_name">Search</string>
     <string name="first">Wyszukaj</string>
     <string name="second">Skanuj</string>
 
+    <!--Activity_stocznia-->
+    <string name="nazwa_stoczni"></string>
 
     <!--Nazwy kategorii uzystematyzowane-->
 
     <string name="opis_kategorii">Wybierając stocznie otrzymasz instrukcję postępowania z wadami</string>
+    <string name="opis_stoczni">Tu powinien załadować się opis stoczni, do każdej stoczni indywidualny, jeżeli widzisz ten tekst znaczy, że ta funkcjonalność jeszcze nie jest sprawna :(</string>
+    <string name="niedopuszczalne">Niedopuszczalne wady</string>
+    <string name="dopuszczalne">Dopuszczalne wady</string>
 
     <string name="kategoria1">KATEGORIA 1</string>
     <string name="kategoria2">KATEGORIA 2</string>
@@ -18,25 +25,44 @@
 
     <!--KAT 1-->
     <string name="st1">SUNSEEKER</string>
+    <string name="st1_opis">To jest opis stoczni Sunseeker - test</string>
     <!--KAT 2-->
     <string name="st2">FAIRLINE</string>
+    <string name="st2_opis">To jest opis stoczni Fairline - test</string>
     <string name="st3">MODEL</string>
+    <string name="st3_opis">To jest opis stoczni Model - test</string>
     <!--KAT 3-->
     <string name="st4">BJ-T</string>
+    <string name="st4_opis">To jest opis stoczni BJ-T - test</string>
     <string name="st5">RHEA</string>
+    <string name="st5_opis">To jest opis stoczni RHEA - test</string>
     <string name="st6">NOVAL</string>
+    <string name="st6_opis">To jest opis stoczni NOVAL - test</string>
     <!--KAT 4-->
     <string name="st7">CNB\nBARETEAU\nLUMITUBE</string>
+    <string name="st7_opis">To jest opis stoczni CNB BARETEAU LUMITUBE  - test</string>
     <string name="st8">F-PAJOT</string>
+    <string name="st8_opis">To jest opis stoczni F-pajot - test</string>
     <string name="st9">NIMBUS</string>
+    <string name="st9_opis">To jest opis stoczni Nimbus - test</string>
     <string name="st10">WINDY</string>
+    <string name="st10_opis">To jest opis stoczni Windy - test</string>
     <string name="st11">HANSEY</string>
+    <string name="st11_opis">To jest opis stoczni Hansey - test</string>
     <!--KAT 5-->
     <string name="st12">BRUNSWICK</string>
+    <string name="st12_opis">To jest opis stoczni Brunswick - test</string>
     <string name="st13">BRUNSWICK POR.</string>
+    <string name="st13_opis">To jest opis stoczni Brunswick Por. - test</string>
     <string name="st14">DELPHIA</string>
+    <string name="st14_opis">To jest opis stoczni Delphia - test</string>
     <string name="st15">MODEL</string>
+    <string name="st15_opis">To jest opis stoczni Model  -test</string>
     <string name="st16">OSTRÓDA</string>
+    <string name="st16_opis">To jest opis stoczni Ostróda - test</string>
+
+    <!--nazwy wszystkich wad-->
+    <string name="pdf_smugi">SMUGI_niedopuszczalne_Kategoria1.pdf</string>
 
     <string name="title_activity_main2">Main2Activity</string>
 </resources>

@@ -1,19 +1,33 @@
 package com.example.ad.search;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.LauncherActivity;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ExpandableListView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -27,24 +41,41 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class SearchActivity extends AppCompatActivity {
 
     private String TAG = SearchActivity.class.getSimpleName();
     private ListView lv;
+    private ExpandableListView listView;
+    private ExpandableListAdapter listAdapter;
+    //private List<String> listDataHeader;
+    //private HashMap<String, List<String>> listHash;
+
+    static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
 
     ArrayList<HashMap<String, String>> contactList;
+    static final List<String> historia = new ArrayList<>();
+    static final List<String> listDataHeader = new ArrayList<>();
+    static final HashMap<String, List<String>> listHash = new HashMap<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
+        if (listDataHeader.isEmpty()) {
+            listDataHeader.add("Historia wyszukiwania");
+        }
         String scan = getIntent().getStringExtra("text");
         EditText edtText = (EditText) findViewById(R.id.editText);
         edtText.setText(scan);
+
+        listView = (ExpandableListView) findViewById(R.id.lvExp);
+        //Collections.reverse(historia);
 
         contactList = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
@@ -56,58 +87,116 @@ public class SearchActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 new GetContacts().execute();
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
             }
         });
+
         EditText userinput = (EditText) findViewById(R.id.editText);
-
-
         userinput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 
                 if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_NEXT) {
                     new GetContacts().execute();
+                    InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                     return true;
                 }
                 return false;
             }
         });
 
-        /*userinput.addTextChangedListener(new TextWatcher(){
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                new GetContacts().execute();
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });*/ //Fragment nie gotowy do obsługi
-
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 String selected = ((TextView) view.findViewById(R.id.filename)).getText().toString();
+
+
                 String encodeString = null;
                 try {
                     encodeString = URLEncoder.encode(selected, "UTF-8");
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
+                bindData(selected);
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setDataAndType(Uri.parse("http://192.168.100.226/imager/pdf/index?filename=" + encodeString), "application/pdf");
                 startActivity(browserIntent);
+
             }
         });
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+
+                String selected = ((TextView) view.findViewById(R.id.lblListItem)).getText().toString();
+                String encodeString = null;
+                try {
+                    encodeString = URLEncoder.encode(selected, "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                //bindData(selected);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setDataAndType(Uri.parse("http://192.168.100.226/imager/pdf/index?filename=" + encodeString), "application/pdf");
+                startActivity(browserIntent);
+
+                return false;
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu, menu); //your file name
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.emergency_open:
+                EditText edtText = findViewById(R.id.editText);
+                String encodeString = edtText.getText().toString() + ".pdf";
+                try {
+                    encodeString = URLEncoder.encode(encodeString, "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setDataAndType(Uri.parse("http://192.168.100.226/imager/pdf/index?filename=" + encodeString), "application/pdf");
+                startActivity(browserIntent);
+                return super.onOptionsItemSelected(item);
+            case R.id.relese_the_history:
+                historia.removeAll(historia);
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void bindData(String selected) {
+
+        Collections.reverse(historia);
+        historia.add(selected);
+        listHash.put(listDataHeader.get(0), historia);
+        Collections.reverse(historia);
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listHash);
+        listView.setAdapter(listAdapter);
+//        listView.onSaveInstanceState();
+    }
+
+    protected void onResume() {
+        super.onResume();
+        listHash.put(listDataHeader.get(0), historia);
+        //  Collections.reverse(historia);
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listHash);
+        listView.setAdapter(listAdapter);
+//        listView.onSaveInstanceState();
     }
 
     private class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -140,17 +229,17 @@ public class SearchActivity extends AppCompatActivity {
                         String filename = c.getString("filename");
                         String path = c.getString("path");
 
-                        filename = filename.replace("©","ę");
-                        filename = filename.replace("\u0088","ł");
-                        filename = filename.replace("˘","ó");
-                        filename = filename.replace("Ą","ą");
-                        filename = filename.replace("\u0098","ś");
-                        filename = filename.replace("ľ","ż");
-                        filename = filename.replace("ť","Ł");
-                        filename = filename.replace("ŕ","Ó");
-                        filename = filename.replace("ä","ń");
-                        filename = filename.replace("†","ć");
-                        //filename = filename.replace("ä","ń");
+                        filename = filename.replace("©", "ę");
+                        filename = filename.replace("\u0088", "ł");
+                        filename = filename.replace("˘", "ó");
+                        filename = filename.replace("Ą", "ą");
+                        filename = filename.replace("\u0098", "ś");
+                        filename = filename.replace("ľ", "ż");
+                        filename = filename.replace("ť", "Ł");
+                        filename = filename.replace("ŕ", "Ó");
+                        filename = filename.replace("ä", "ń");
+                        filename = filename.replace("†", "ć");
+                        filename = filename.replace("¤", "ą");
                         //filename = filename.replace("ä","ń");
 
 
@@ -190,6 +279,7 @@ public class SearchActivity extends AppCompatActivity {
             return null;
         }
 
+
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
@@ -197,9 +287,66 @@ public class SearchActivity extends AppCompatActivity {
             ListAdapter adapter = new SimpleAdapter(SearchActivity.this, contactList,
                     R.layout.list_item, new String[]{"filename"},
                     new int[]{R.id.filename});
+
             lv.setAdapter(adapter);
             if (lv == null) {
                 Toast.makeText(SearchActivity.this, "Nie znaleziono rysunków o podanej nazwie", Toast.LENGTH_LONG).show();
+            }
+
+        }
+    }
+
+    public void scanBar(View v) {
+        try {
+            //start the scanning activity from the com.google.zxing.client.android.SCAN intent
+            Intent intent = new Intent(ACTION_SCAN);
+            intent.putExtra("SCAN_MODE", "SCAN_MODE");
+            //intent.putExtra("SCAN_CAMERA_ID", 1); when you want to use front camera, but it's hard to focus on barcode...
+            startActivityForResult(intent, 0);
+        } catch (ActivityNotFoundException anfe) {
+            //on catch, show the download dialog
+            showDialog(this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
+        }
+    }
+
+    //alert dialog for downloadDialog
+    private static AlertDialog showDialog(final Activity act, CharSequence title, CharSequence message, CharSequence buttonYes, CharSequence buttonNo) {
+        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
+        downloadDialog.setTitle(title);
+        downloadDialog.setMessage(message);
+        downloadDialog.setPositiveButton(buttonYes, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Uri uri = Uri.parse("market://search?q=pname:" + "com.google.zxing.client.android");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                try {
+                    act.startActivity(intent);
+                } catch (ActivityNotFoundException anfe) {
+
+                }
+            }
+        });
+        downloadDialog.setNegativeButton(buttonNo, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        return downloadDialog.show();
+    }
+
+    //on ActivityResult method
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                if ("SCAN_RESULT" != null) {
+                    String contents = intent.getStringExtra("SCAN_RESULT");
+                    intent = new Intent(this, SearchActivity.class);
+                    intent.putExtra("text", contents);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, "Nie zeskanowano kodu!", Toast.LENGTH_LONG).show();
+                    intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                }
             }
         }
     }

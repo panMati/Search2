@@ -23,7 +23,8 @@
         <activity
             android:name=".SearchActivity"
             android:screenOrientation="sensor" />
-        <activity android:name=".KategoriaActivity"></activity>
+        <activity android:name=".KategoriaActivity" />
+        <activity android:name=".StoczniaActivity"></activity>
     </application>
 
 </manifest>

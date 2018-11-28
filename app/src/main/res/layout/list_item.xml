@@ -11,5 +11,13 @@
         android:textColor="@color/colorAccent"
         android:textSize="30dp"/>
 
+    <!--<TextView-->
+        <!--android:id="@+id/last_item"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingBottom="2dip"-->
+        <!--android:textColor="@color/colorAccent"-->
+        <!--android:textSize="30dp"/>-->
+
 
 </LinearLayout>
